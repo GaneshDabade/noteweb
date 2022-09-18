@@ -10,7 +10,7 @@
 
 #text {
     width: 35%;
-    height: 80%;
+    height: 70%;
     resize: vertical;
     display: block;
     margin-left: auto;
@@ -19,25 +19,20 @@
     margin-bottom: auto;
     border-radius: 1rem;
     background-color: #EEEEEE;
-}
-
-table,
-td {
-    border-collapse: collapse;
-    padding: 0;
-    max-width: 190;
+    padding: 1.25em;
+    font-size: x-large;
 }
 
 #flname {
     max-width: 85%;
     margin: 1% 0.5%;
+    padding: 1.25em;
 }
 
-p {
-    text-align: center;
-    background-color: yellow;
-    font-style: italic;
-    font-weight: bold;
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
 }
 
 #open {
@@ -46,6 +41,7 @@ p {
     font-size: 1rem;
     border-radius: 1rem;
     background-color: #5CB8E4;
+    margin-top: 1%;
 }
 
 #clean {
@@ -53,6 +49,7 @@ p {
     border: none;
     border-radius: 1rem;
     background-color: #5CB8E4;
+    margin-top: 1%;
 }
 
 .btn-size {
@@ -73,16 +70,18 @@ p {
     font-size: 1rem;
     border: none;
     border-radius: 1rem;
-    height: 5%;
+    height: 4%;
     width: 22%;
     background-color: #F2F2F2;
 }
 
-input[type="text"]::placeholder {
-    padding-left: 10px;
+#fileLoad {
+    color: #F2F2F2;
+    font-size: medium;
+    padding-left: 5rem;
 }
 
-textarea::placeholder {
-    padding: 7px 16px;
-    font-size: large;
+select {
+    margin-right: 2rem;
+    margin-bottom: 0.5rem;
 }
