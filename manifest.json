@@ -1,0 +1,28 @@
+{
+	"manifest_version":2,
+	"name":"Note",
+	"version":"0.0",
+	"description":"Taking notes",
+	"browser_specific_settings":{
+		"gecko":{
+			"strict_min_version":"54.0a1"
+		}
+	},
+
+	"sidebar_action":{
+		"default_icon":"icons/",
+		"default_title":"NoteIt",
+		"default_panel":"noteit.html"
+
+	},
+
+	"permissions":["storage","tabs"],
+
+	"commands":{
+		"_execute_sidebar_action":{
+			"suggested_key":{
+				"default":"Ctrl + Shift + Y"
+			}
+		}
+	}
+}
