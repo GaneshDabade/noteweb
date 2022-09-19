@@ -10,9 +10,11 @@
         <center>
             <input type="text" class="input-size" id="flname" placeholder="Enter Filename"></input><button id="save">Save</button><br/>
             <select name="format" id="format">
-             <option value="pdf">PDF</option>
-            <option value="docx">DOCX</option>
-            <option value="text">TEXT</option>
+             <option value="selectOpt">Please select</option>
+             <option value="pdf">pdf</option>
+            <option value="docx">docx</option>
+            <option value="text">text/plain</option>
+            <option value="json">json</option>
             </select><br/>
             <input type="file" id="fileLoad"></input><br/>
             <button id="open" class="btn-size">Open</button>
@@ -22,6 +24,9 @@
 
     </div>
     <script type="text/javascript" src="noteit.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.6/jspdf.plugin.autotable.min.js"></script>
 </body>
 
 </html>

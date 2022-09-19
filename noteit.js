@@ -5,17 +5,25 @@ btn.onclick = function save() {
 
     //getting the value/content of text area
     var content = document.querySelector("#text").value;
+    //take the options from user
+    var card = document.getElementById("format");
+    if (card.selectedIndex == 0) {
+        alert('select one answer');
+    } else {
+        var selectedText = card.options[card.selectedIndex].text;
+        // alert(selectedText);
+    }
 
     //Blob object which is a kind of data type holding the data to store in a file
+    //getting the file name fro the text field
+    var fileName = document.getElementById("flname").value;
     //it is responsible for holding data
-    var blob = new Blob([content], { type: "text/plain" });
+    var blob = new Blob([content], { type: `"${selectedText}"`, filename: `${fileName}.${selectedText}` });
 
     //I guess its the url of the page i.e the text file of the content :)
     var saveUrl = window.URL.createObjectURL(blob);
 
 
-    //getting the file name fro the text field
-    var fileName = document.getElementById("flname").value;
 
     //Check that the file name field is not empty
     if (fileName === '') {
