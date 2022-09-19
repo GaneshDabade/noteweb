@@ -9,20 +9,32 @@ btn.onclick = function save() {
     var card = document.getElementById("format");
     if (card.selectedIndex == 0) {
         alert('select one answer');
+        cleanFields();
+        return;
     } else {
         var selectedText = card.options[card.selectedIndex].text;
         // alert(selectedText);
+        var formatType;
+        if (selectedText === "PDF") {
+            formatType = 'application/pdf';
+        } else if (selectedText === "DOCX") {
+            formatType = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document';
+        } else if (selectedText === "JSON") {
+            formatType = 'application/json';
+        } else {
+            formatType = "text/plain";
+        }
     }
 
     //Blob object which is a kind of data type holding the data to store in a file
-    //getting the file name fro the text field
-    var fileName = document.getElementById("flname").value;
     //it is responsible for holding data
-    var blob = new Blob([content], { type: `"${selectedText}"`, filename: `${fileName}.${selectedText}` });
+    var blob = new Blob([content], { type: `${formatType}` });
 
     //I guess its the url of the page i.e the text file of the content :)
     var saveUrl = window.URL.createObjectURL(blob);
 
+    //getting the file name fro the text field
+    var fileName = document.getElementById("flname").value;
 
 
     //Check that the file name field is not empty
@@ -57,6 +69,7 @@ btn3.addEventListener('click', () => {
 
 //Function Clean fields
 function cleanFields() {
+    document.querySelector("#format").value = document.querySelector("#format")[0].value;
     document.querySelector("#text").value = "";
     document.getElementById('fileLoad').value = [];
     document.getElementById('flname').value = "";
